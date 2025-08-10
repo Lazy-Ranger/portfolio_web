@@ -2,6 +2,18 @@
 
 
 
+/* Define theme variables */
+@theme {
+  --color-lightHover: #fcf4ff;
+  --color-darkHover: #2a004a;
+  --color-darkTheme: #11001f;
+
+    --font-sans: Outfit, sans-serif;
+  --font-serif: Ovo, serif;
+}
+
+/* Global font */
 * {
   font-family: Outfit, sans-serif;
 }
+

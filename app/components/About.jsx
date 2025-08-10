@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { assets } from "../../assets/assets";
+import { assets, infoList } from "../../assets/assets";
 
 const About = () => {
   return (
@@ -16,17 +16,24 @@ const About = () => {
           />
         </div>
         <div className="flex-1">
-          <p>
+          <p className="mb-10 mx-w-2xl font-Ovo">
             I am experienced in the field of web development, and I have a
-            passion for creating innovative and user-friendly websites. I am
+            passion for creating innovative and user-friendly websites. I ams
             proficient in HTML, CSS, and JavaScript, and I have experience in
             building responsive and mobile-friendly web applications.
           </p>
-          <p>
-            I have a strong understanding of web design principles and
-            technologies, and I am skilled in using HTML, CSS, and JavaScript to
-            create visually appealing and interactive web pages.
-          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-xl">
+            {infoList.map(({ icon, iconDark, title, description }, index) => (
+              <li
+                key={index}
+                className="text-lg font-Ovo border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1"
+              >
+                <Image src={icon} alt={title} className="w-6 h-6" />
+                <h3 className="my-4 font-semibold text-gray-700">{title}</h3>
+                <p className="text-gray-600 text-sm">{description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
