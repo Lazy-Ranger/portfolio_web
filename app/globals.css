@@ -8,12 +8,16 @@
   --color-darkHover: #2a004a;
   --color-darkTheme: #11001f;
 
-    --font-sans: Outfit, sans-serif;
+
+  --font-sans: Outfit, sans-serif;
   --font-serif: Ovo, serif;
+
+  /* Custom shadows */
+  --shadow-dark: 4px 4px #000;
+  --shadow-white: 4px 4px #fff;
 }
 
 /* Global font */
 * {
   font-family: Outfit, sans-serif;
 }
-

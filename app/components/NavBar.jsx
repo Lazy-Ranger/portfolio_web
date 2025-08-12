@@ -1,24 +1,39 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState, use } from "react";
 import Image from "next/image";
 import { assets } from "../../assets/assets";
 
 const NavBar = () => {
   const sideMenuRef = useRef(null);
+  const [isScroll, setIsScroll] = useState(false);
 
   const openMenu = () => {
     sideMenuRef.current.style.transform = "translateX(-16rem)";
   };
 
   const closeMenu = () => {
-     sideMenuRef.current.style.transform = "translateX(16rem)";
+    sideMenuRef.current.style.transform = "translateX(16rem)";
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
 
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} alt="Background" />
       </div>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-8 flex item-center justify-between z-50">
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-8 flex item-center justify-between z-50 ${
+          isScroll ? "bg-white bg-opacity-50 background-blur-lg shadow-sm" : ""
+        }`}
+      >
         <a href="/#top">
           <Image
             src={assets.logo_nits}
@@ -69,7 +84,10 @@ const NavBar = () => {
             Contact
             <Image src={assets.arrow_icon} className="w-3" alt="Send Icon" />
           </a>
-          <button className="block md:hidden ml-3 cursor-pointer" onClick={openMenu}>
+          <button
+            className="block md:hidden ml-3 cursor-pointer"
+            onClick={openMenu}
+          >
             <Image
               src={assets.menu_black}
               alt="Great Stack Logo"
@@ -96,7 +114,7 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#about" onClick={closeMenu} >
+            <a className="font-Ovo" href="#about" onClick={closeMenu}>
               About
             </a>
           </li>
@@ -111,7 +129,7 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" href="#contact"  onClick={closeMenu}>
+            <a className="font-Ovo" href="#contact" onClick={closeMenu}>
               Contact Me
             </a>
           </li>
