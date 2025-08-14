@@ -29,11 +29,11 @@ const Header = () => {
           <Image src={assets.right_arrow_white} alt="" className="w-5" />
         </a>
         <a
-          href="/sample_resume.pdf"
+          href="/sample-resume.pdf"
           download
-          className="px-10 py-3 border rounded-full border-gray-500 flex item-center gap-4"
+          className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-4"
         >
-          My Resume <Image src={assets.download_icon} alt="" className="w-5" />
+          My Resume <Image src={assets.download_icon} alt="" className="w-6" />
         </a>
       </div>
     </div>
