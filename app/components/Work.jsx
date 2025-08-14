@@ -17,7 +17,7 @@ const Work = () => {
         {workData.map((project, index) => {
           return (
             <div
-              className="aspects-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group h-50"
+              className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
               key={index}
               style={{ backgroundImage: `url(${project.bgImage})` }}
             >
@@ -27,10 +27,12 @@ const Work = () => {
                justify-between duration-500 group-hover:bottom-7"
               >
                 <div>
-                  <h2>{project.title}</h2>
-                  <p>{project.description}</p>
+                  <h2 className="font-semibold">{project.title}</h2>
+                  <p className="text-sm text-gray-700">{project.description}</p>
                 </div>
-                <div>
+                <div className="border rounded-full border-black w-9 aspect-square flex item-center justify-center
+                  shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transaction
+                ">
                   <Image src={assets.send_icon} alt="" className="w-5" />
                 </div>
               </div>
