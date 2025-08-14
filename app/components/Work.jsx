@@ -30,9 +30,11 @@ const Work = () => {
                   <h2 className="font-semibold">{project.title}</h2>
                   <p className="text-sm text-gray-700">{project.description}</p>
                 </div>
-                <div className="border rounded-full border-black w-9 aspect-square flex item-center justify-center
+                <div
+                  className="border rounded-full border-black w-9 aspect-square flex item-center justify-center
                   shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transaction
-                ">
+                "
+                >
                   <Image src={assets.send_icon} alt="" className="w-5" />
                 </div>
               </div>
@@ -40,6 +42,14 @@ const Work = () => {
           );
         })}
       </div>
+
+      <a
+        href=""
+        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] 
+        border-gray-700 rounded-full y-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500"
+      >
+        Show more <Image src={assets.right_arrow_bold} alt="" className="w-4" />
+      </a>
     </div>
   );
 };

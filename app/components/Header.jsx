@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="w-10/11 max-w-3Xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div id="home" className="w-10/11 max-w-3Xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div>
         <Image src={assets.profile_img} alt="" className="w-22 rounded-full" />
       </div>
